@@ -7,5 +7,15 @@ angular.module('yawl.controllers.wishlists', []).
             self.getWishlistCollection();
         });
 
-        // -- controller code here --
+        this.getWishlistCollection = function () {
+            this.list = wishlistCollection.collection();
+        };
+
+        this.removeWishlist = function (wishlistId) {
+            wishlistCollection.remove(wishlistId);
+        };
+
+        this.createWishlist = function (wishlist) {
+            wishlistCollection.create(wishlist);
+        };
     }]);
